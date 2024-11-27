@@ -38,6 +38,7 @@ spec:
     database:
       mysql:
         persistentVolumeClaim:
+          storageClassName: "gp3-csi"
           resources: 
             requests:
               storage: 2Gi
