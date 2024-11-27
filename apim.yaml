@@ -1,6 +1,7 @@
 apiVersion: apps.3scale.net/v1alpha1
 kind: APIManager
 metadata:
+  name: apimanager-sample
   annotations:
     apps.3scale.net/apimanager-threescale-version: '2.13'
 spec:
