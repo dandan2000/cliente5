@@ -38,8 +38,9 @@ spec:
     database:
       mysql:
         persistentVolumeClaim:
-          resource: 
-            requests: 2G
+          resources: 
+            requests:
+              storage: 2Gi
     sidekiqSpec:
       replicas: 1
     sphinxSpec: {}
