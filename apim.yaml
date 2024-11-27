@@ -1,6 +1,8 @@
 apiVersion: apps.3scale.net/v1alpha1
 kind: APIManager
 metadata:
+  annotations:
+    apps.3scale.net/apimanager-threescale-version: '2.13'
 spec:
   imageStreamTagImportInsecure: false
   resourceRequirementsEnabled: false
