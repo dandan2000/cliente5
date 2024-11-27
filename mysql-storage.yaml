@@ -1,0 +1,21 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  annotations:
+    volume.beta.kubernetes.io/storage-provisioner: ebs.csi.aws.com
+    volume.kubernetes.io/storage-provisioner: ebs.csi.aws.com
+  name: mysql-storage
+  finalizers:
+    - kubernetes.io/pvc-protection
+  labels:
+    app: 3scale-api-management
+    threescale_component: system
+    threescale_component_element: mysql
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: gp3-csi
+  volumeMode: Filesystem
