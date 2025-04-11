@@ -1,0 +1,43 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  name: apimanager-sample
+  namespace: 3scale
+spec:
+  apicast:
+    managementAPI: status
+    openSSLVerify: false
+    productionSpec: 
+      replicas: 0
+    registryURL: http://apicast-staging:8090/policies
+    responseCodes: true
+    stagingSpec: 
+      replicas: 0
+  appLabel: 3scale-api-management
+  backend:
+    cronSpec: 
+      replicas: 0
+    listenerSpec: 
+      replicas: 0
+    workerSpec: 
+      replicas: 0
+  imageStreamTagImportInsecure: false
+  resourceRequirementsEnabled: false
+  system:
+    appSpec: 
+      replicas: 0
+#    fileStorage:
+#      simpleStorageService:
+#        configurationSecretRef:
+#          name: aws-auth
+    sidekiqSpec: 
+      replicas: 0
+    sphinxSpec: 
+      replicas: 0
+  zync:
+    appSpec: 
+      replicas: 0
+    queSpec: 
+      replicas: 0
+  tenantName: 3scale
+  wildcardDomain: 3scale.apps.CHANGEME.com
