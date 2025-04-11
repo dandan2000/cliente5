@@ -8,36 +8,36 @@ spec:
     managementAPI: status
     openSSLVerify: false
     productionSpec: 
-      replicas: 0
+      replicas: 1
     registryURL: http://apicast-staging:8090/policies
     responseCodes: true
     stagingSpec: 
-      replicas: 0
+      replicas: 1
   appLabel: 3scale-api-management
   backend:
     cronSpec: 
-      replicas: 0
+      replicas: 1
     listenerSpec: 
-      replicas: 0
+      replicas: 1
     workerSpec: 
-      replicas: 0
+      replicas: 1
   imageStreamTagImportInsecure: false
   resourceRequirementsEnabled: false
   system:
     appSpec: 
-      replicas: 0
+      replicas: 1
 #    fileStorage:
 #      simpleStorageService:
 #        configurationSecretRef:
 #          name: aws-auth
     sidekiqSpec: 
-      replicas: 0
+      replicas: 1
     sphinxSpec: 
-      replicas: 0
+      replicas: 1
   zync:
     appSpec: 
-      replicas: 0
+      replicas: 1
     queSpec: 
-      replicas: 0
+      replicas: 1
   tenantName: 3scale
   wildcardDomain: 3scale.apps.CHANGEME.com
