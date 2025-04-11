@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 3scale-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 3scale-tenant
+  template:
+    metadata:
+      labels:
+        app: 3scale-tenant
+    spec:
+      serviceAccountName: 3scale-tenant-sa
+      containers:
+        - name: 3scale-tenant
+          image: quay.io/dacelent/mvtenant:latest
+          imagePullPolicy: Always
+          command: ["sleep", "infinity"]
+          envFrom:
+            - configMapRef:
+                name: 3scale-tenant-cm
+          ports:
+            - containerPort: 8080
+          securityContext:
+            runAsUser: 0
+            allowPrivilegeEscalation: true
