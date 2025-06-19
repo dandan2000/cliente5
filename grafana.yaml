@@ -1,0 +1,27 @@
+kind: Grafana
+metadata:
+  name: grafana-monitoring
+  namespace: grafana
+spec:
+  baseImage: 'registry.redhat.io/rhel8/grafana:7'
+  deployment:
+    skipCreateAdminAccount: true
+    envFrom:
+    - secretRef:
+        name: grafana-admin-credentials
+  config:
+    auth:
+      disable_signout_menu: true
+    auth.anonymous:
+      enabled: true
+    log:
+      level: warn
+      mode: console
+  dashboardLabelSelector:
+    - matchExpressions:
+      - key: monitoring-key
+        operator: In
+        values:
+          - middleware
+  ingress:
+    enabled: true
