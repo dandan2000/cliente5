@@ -1,20 +1,19 @@
 kind: GrafanaDataSource
 metadata:
-name: userworkload-grafana-datasource
-namespace: grafana
+  name: userworkload-grafana-datasource
+  namespace: grafana
 spec:
-datasources:
+  datasources:
     - access: proxy
-    editable: true
-    isDefault: true
-    jsonData:
+      editable: true
+      isDefault: true
+      jsonData:
         httpHeaderName1: Authorization
         timeInterval: 5s
         tlsSkipVerify: true
-    name: Prometheus
-    secureJsonData:
+      name: Prometheus
+      secureJsonData:
         httpHeaderValue1: >-
-        Bearer <VALOR DEL TOKEN>
-    type: prometheus
-    url: 'https://thanos-querier.openshift-monitoring.svc.cluster.local:9091'
-name: userworkload-grafana-datasource.yaml
+          Bearer <VALOR DEL TOKEN> # Asegúrate de reemplazar <VALOR DEL TOKEN> con tu token real
+      type: prometheus
+      url: 'https://thanos-querier.openshift-monitoring.svc.cluster.local:9091'
