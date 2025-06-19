@@ -18,3 +18,4 @@ spec:
           Bearer <VALOR DEL TOKEN>
       type: prometheus
       url: 'https://thanos-querier.openshift-monitoring.svc.cluster.local:9091'
+name: userworkload-grafana-datasource.yaml
