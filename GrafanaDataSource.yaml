@@ -14,6 +14,6 @@ spec:
       name: Prometheus
       secureJsonData:
         httpHeaderValue1: >-
-          Bearer <VALOR DEL TOKEN> # Asegúrate de reemplazar <VALOR DEL TOKEN> con tu token real
+          Bearer <VALOR DEL TOKEN>
       type: prometheus
       url: 'https://thanos-querier.openshift-monitoring.svc.cluster.local:9091'
